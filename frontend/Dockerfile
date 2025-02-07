@@ -1,0 +1,4 @@
+FROM python:3.9-slim
+WORKDIR /app
+COPY index.html /app/
+CMD ["python3", "-m", "http.server", "8000", "--bind", "0.0.0.0"]

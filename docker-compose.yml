@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "9090:80"
+    depends_on:
+      - worker
+
+  worker:
+    build: ./worker
+    expose:
+      - "5000"
